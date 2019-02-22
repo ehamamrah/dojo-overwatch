@@ -1,6 +1,6 @@
 module Api
   class HerosController < SharedController
-    before_action :fetch_heros_from_overwatch, only: %i[index show]
+    before_action :fetch_heros_from_overwatch
     before_action :find_hero, only: %i[show abilities]
     before_action :fetch_hero_abilities_from_overwatch, only: %i[show abilities]
 
@@ -22,6 +22,7 @@ module Api
     end
 
     def fetch_hero_abilities_from_overwatch
+      return unless @hero.present?
       hero_overwatch_id = @hero.overwatch_id
       link              = OVERWATCH_HERO_URL + hero_overwatch_id.to_s
       HeroAbilitiesFetcher.new(link:              link,
