@@ -1,24 +1,19 @@
-# README
+# API Simple Call
+- Getting Started:
+    * get '/api/v1/estates'      [index]
+    * get '/api/v1/estates/[id]' [Show]
+    * post '/api/v1/estates/', **Params are required** [Create]
+    * patch '/api/v1/estates/[id]' **Params are required** [Update]
+    * delete '/api/v1/estates/[id]' [Delete]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- What's Done
+    * Using services to fetch Heros & Abilities through API request
+    * Parsing fetched data and save it to Data Base
+    * Testing using RSpec
+    * Admin Panel Implemented using Active Admin link: '/admin' **No user required**
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Testing
+    - Model & Controller Tests written with RSpec.
+        - For testing: bundle exec rspec
+        - **Controller Specs are inside spec/requests/**
