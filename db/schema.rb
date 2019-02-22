@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_22_150441) do
+ActiveRecord::Schema.define(version: 2019_02_22_152703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2019_02_22_150441) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "abilities_heros", id: false, force: :cascade do |t|
+    t.bigint "hero_id", null: false
+    t.bigint "ability_id", null: false
+    t.index ["ability_id", "hero_id"], name: "index_abilities_heros_on_ability_id_and_hero_id"
+    t.index ["hero_id", "ability_id"], name: "index_abilities_heros_on_hero_id_and_ability_id"
+  end
+
   create_table "heros", force: :cascade do |t|
     t.string "name"
     t.string "real_name"
@@ -31,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_22_150441) do
     t.integer "shield"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "abilities_list", default: [], array: true
+    t.integer "reserved_id"
   end
 
 end
