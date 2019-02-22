@@ -1,5 +1,5 @@
 module Api
-  class SharedController < ApplicationController
+  class SharedController < ApiController
     def index
       records = resource_model.all
       render json: {  name: 'List', data: records,
