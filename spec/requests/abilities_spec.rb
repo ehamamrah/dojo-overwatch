@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe 'Api V1 Abilities', type: :request do
   let(:api)        { '/api/abilities' }
   let(:valid_ability) { { id: 1 } }

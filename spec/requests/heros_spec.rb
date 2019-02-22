@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe 'Api V1 Heros', type: :request do
   let(:api)        { '/api/heros' }
   let(:valid_hero) { { id: 1 } }
