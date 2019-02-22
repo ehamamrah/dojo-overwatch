@@ -9,15 +9,10 @@ module Api
                       message: message_to_show(@abilities) }
     end
 
-    def show
-      render json: {  data: @ability,
-                      message: message_to_show(@ability) }
-    end
-
     private
 
     def find_ability
-      @bility = Ability.find_by(overwatch_id: params[:id])
+      @ability = Ability.find_by(overwatch_id: params[:id])
     end
 
     def fetch_abilities_from_overwatch
