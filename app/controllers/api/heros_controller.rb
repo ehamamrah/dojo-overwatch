@@ -1,6 +1,6 @@
 module Api
   class HerosController < SharedController
-    before_action :fetch_heros_from_overwatch, only: %i[index show]
+    before_action :fetch_heros_from_overwatch
     before_action :find_hero, only: %i[show abilities]
     before_action :fetch_hero_abilities_from_overwatch, only: %i[show abilities]
 
