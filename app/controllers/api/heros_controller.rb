@@ -22,6 +22,7 @@ module Api
     end
 
     def fetch_hero_abilities_from_overwatch
+      return unless @hero.present?
       hero_overwatch_id = @hero.overwatch_id
       link              = OVERWATCH_HERO_URL + hero_overwatch_id.to_s
       HeroAbilitiesFetcher.new(link:              link,

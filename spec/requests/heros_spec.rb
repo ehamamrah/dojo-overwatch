@@ -17,7 +17,10 @@ RSpec.describe 'Api V1 Heros', type: :request do
     it 'get details from json respond' do
       json_response = JSON.parse(response.body)
       expect(json_response['message']).to eql('Success')
-      records_overwatch_ids = json_response['data'].map { |hero| hero['overwatch_id'] }
+      records               = json_response['data']
+      records_overwatch_ids = records.map { |hero| hero['overwatch_id'] }
+
+      expect(records.count).to be >= 1
       expect(records_overwatch_ids).to include(valid_hero[:id])
     end
   end
@@ -27,12 +30,21 @@ RSpec.describe 'Api V1 Heros', type: :request do
       get "#{api}/#{valid_hero[:id]}"
       record = JSON.parse(response.body)
       hero = record['data']
+
       expect(hero['overwatch_id']).to eql(valid_hero[:id])
       expect(hero).to include('real_name')
       expect(hero).to include('name')
       expect(hero).to include('armour')
       expect(hero).to include('health')
       expect(hero).to include('shield')
+    end
+
+    it 'will respond with error' do
+      get "#{api}/#{wrong_hero[:id]}"
+      record = JSON.parse(response.body)
+
+      expect(record['data']).to eql(nil)
+      expect(record['message']).to eql('No Details to Show')
     end
   end
 
