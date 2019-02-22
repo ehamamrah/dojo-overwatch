@@ -1,5 +1,11 @@
 module Api
   class SharedController < ApplicationController
+    def index
+      records = resource_model.all
+      render json: {  name: 'List', data: records,
+                      message: message_to_show(records) }
+    end
+
     def show
       render json: {  data: resource,
                       message: message_to_show(resource) }
@@ -11,9 +17,16 @@ module Api
       targeted_object.present? ? 'Success' : 'No Details to Show'
     end
 
+    def resource_name
+      self.class.name.gsub('Controller', '').gsub('Api::', '').underscore.singularize
+    end
+
     def resource
-      name = self.class.name.gsub('Controller', '').gsub('Api::', '').underscore.singularize
-      instance_variable_get("@#{name}")
+      instance_variable_get("@#{resource_name}")
+    end
+
+    def resource_model
+      resource_name.classify.constantize
     end
   end
 end
