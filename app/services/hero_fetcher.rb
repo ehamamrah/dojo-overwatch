@@ -1,6 +1,6 @@
 class HeroFetcher < MainFetcher
   private
-
+  
   def save_record_details(hero, details, id)
     return hero unless hero.new_record?
     hero.assign_attributes(name:        details['name'],
