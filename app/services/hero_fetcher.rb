@@ -10,7 +10,8 @@ class HeroFetcher
     records           = JSON.parse(overwatch_request)
     fetched_records   = records['data']
     saved_records     = Hero.all
-    return saved_records if fetched_records.count.eql?(saved_records.count)
+    return if fetched_records.count.eql?(saved_records.count)
+
     start_fetching_heros(records['data'])
   end
 
