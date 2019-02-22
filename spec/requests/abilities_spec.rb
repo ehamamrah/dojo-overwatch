@@ -36,5 +36,13 @@ RSpec.describe 'Api V1 Abilities', type: :request do
       expect(ability).to include('description')
       expect(ability).to include('is_ultimate')
     end
+
+    it 'will respond with error' do
+      get "#{api}/#{wrong_ability[:id]}"
+      record = JSON.parse(response.body)
+
+      expect(record['data']).to eql(nil)
+      expect(record['message']).to eql('No Details to Show')
+    end
   end
 end
