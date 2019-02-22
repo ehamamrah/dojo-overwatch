@@ -1,10 +1,15 @@
 # API Simple Call
 - Getting Started:
-    * get '/api/heros'                [Index All Heros]
-    * get '/api/heros/[id]'           [Show Hero]
-    * get '/api/heros/[id]/abilities' [Show Hero Abilities]
-    * get '/api/abilities'            [Index All Abilities]
-    * get '/api/abilities/[id]'       [Show Ability]
+    - [ Index All Heros ]
+        * get '/api/heros'
+    - [ Show Hero ]
+        * get '/api/heros/[id]'
+    - [ Show Hero Abilities ]
+        * get '/api/heros/[id]/abilities'
+    - [ Index All Abilities ]
+        * get '/api/abilities'
+    - [Show Ability]
+        * get '/api/abilities/[id]'
 
 - What's Done
     * Using services to fetch Heros & Abilities through API request
