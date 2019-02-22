@@ -3,9 +3,9 @@ module Api
     before_action :find_hero, only: %i[show]
 
     def index
-      @heros = Hero.all
-      render json: {  name: 'Heros List', data: @heros,
-                      message: message_to_show(@heros) }
+      heros = HeroFetcher.new(link: OVERWATCH_HERO_URL).perform
+      render json: {  name: 'Heros List', data: heros,
+                      message: message_to_show(heros) }
     end
 
     def show
@@ -16,7 +16,7 @@ module Api
     private
 
     def find_hero
-      @hero = Hero.find_by(id: params[:id])
+      @hero = Hero.find_by(overwatch_id: params[:id])
     end
 
     def message_to_show(targeted_object)
