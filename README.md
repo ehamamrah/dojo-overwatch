@@ -1,10 +1,10 @@
 # API Simple Call
 - Getting Started:
-    * get '/api/v1/estates'      [index]
-    * get '/api/v1/estates/[id]' [Show]
-    * post '/api/v1/estates/', **Params are required** [Create]
-    * patch '/api/v1/estates/[id]' **Params are required** [Update]
-    * delete '/api/v1/estates/[id]' [Delete]
+    * get '/api/heros'                [Index All Heros]
+    * get '/api/heros/[id]'           [Show Hero]
+    * get '/api/heros/[id]/abilities' [Show Hero Abilities]
+    * get '/api/abilities'            [Index All Abilities]
+    * get '/api/abilities/[id]'       [Show Ability]
 
 - What's Done
     * Using services to fetch Heros & Abilities through API request
