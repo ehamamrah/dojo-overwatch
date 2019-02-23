@@ -12,6 +12,7 @@ development:
 test:
   <<: *default
   database: dojo-overwatch_test
+  host: localhost
 
 production:
   <<: *default
