@@ -19,6 +19,7 @@
     * Admin Panel Implemented using **Active Admin** link: '/admin' **No user required**
     * Deployed to **Heroku**
     * **DOJO Overwatch On Docker**
+    * Building tests are running using **TravisCI**
 
 - Testing
     - Model & Controller Tests written with RSpec.
