@@ -17,11 +17,15 @@
     * Testing using **RSpec**
     * Admin Panel Implemented using **Active Admin** link: '/admin' **No user required**
     * Deployed to **Heroku**
+    * **DOJO Overwatch On Docker**
 
 - Testing
     - Model & Controller Tests written with RSpec.
         - For testing: bundle exec rspec
         - **Controller Specs are inside spec/requests/**
+
+- Docker
+  - run the command: **docker-comopse up**
 
 - Deployment
   - App deployed to heroku link: **'https://dojo-overwatch.herokuapp.com/'**
