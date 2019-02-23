@@ -1,4 +1,5 @@
-# API Simple Call
+# DOJO Overwatch API's Wrapper
+[![Build Status](https://travis-ci.org/ehamamrah/dojo-overwatch.svg?branch=master)](https://travis-ci.org/ehamamrah/dojo-overwatch)
 - Getting Started:
     - [ Index All Heros ]
         * get '/api/heros'
